@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> E03-Kaminer</title>
+    <meta charset="UTF-8">
+    <style>
+
+        body{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin:0;
+            padding:0;
+        }
+
+
+
+        .display{
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            background-color: #f0f0f0;
+        }
+
+       .frame{
+        background-color: brown;
+        color: black;
+        width: 500px;
+        height: 400px;
+        border: 10px double black;
+        border-radius: 25px;
+        padding: 20px;
+        position: relative; 
+       }
+
+
+       .clock{
+        position:absolute;
+        float:left;
+        top:-40px;
+        font-size: 5px; 
+       }
+
+        .temp{
+        position:absolute;
+        top:60px;
+        left:20px;
+        font-size: 30px; 
+       }
+
+       .on-off-button{
+        position:absolute;
+        top:390px;
+        left:10px;
+        font-size: 20px;
+        background-color: green;
+        color: black;; 
+        padding: 10px 20px;
+        border:none;
+        border-radius: 10px;
+        cursor: pointer;
+       }
+
+       .searchRecipies{
+        position:absolute;
+        top:390px;
+        left:200px;
+        font-size: 20px;
+        background-color: plum;
+        color: black;; 
+        padding: 10px 20px;
+        border:dotted;
+        border-radius: 10px;
+        cursor: pointer;
+       }
+
+       .switch{
+    
+        position:absolute;
+        top:300px;
+        left:10px;
+        font-size: 20px;
+        background-color: yellowgreen;
+        color: black;; 
+        padding: 10px 20px;
+        border:dashed;
+        border-radius: 10px;
+        cursor: pointer;
+       }
+
+
+       .on-off-button:active, .searchRecipies:active, .switch:active{
+        background-color: red;
+       }
+
+       footer{
+        text-align:center; 
+        margin-top: 10px;
+       }
+
+       .image{
+        float: right;
+       }
+    </style>
+    
+<script>
+    function doStartClock(){
+        setInterval(doClockTick, 1000);
+    }
+
+    function doClockTick(){
+        var currentDate = new Date();
+        var mins = currentDate.getMinutes();
+        var hours = currentDate.getHours();
+        var secs = currentDate.getSeconds();
+        var timeString = hours+":"+mins+":"+secs;
+
+        var outputElement = document.getElementById("timePar");
+        outputElement.textContent=timeString;
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+     const tempDisplay = document.getElementById('temp');
+     const onOffButton = document.getElementById('onOffButton');
+     const images = document.querySelectorAll('.image img');
+     const switchButton = document.getElementById('switch');
+
+     switchButton.addEventListener('click',function(){
+        if(switchButton.textContent === 'Switch To Browser'){
+            switchButton.textContent = 'Look Inside Fridge';
+            
+        }else{
+            switchButton.textContent = 'Switch To Browser';
+        }
+    });
+     
+ 
+     function updateTemp(){
+         const temp = Math.floor(Math.random()*(40-32)+32);
+         tempDisplay.textContent = 'Temperature: '+ temp + 'F';
+     }
+ 
+     
+     updateTemp();
+ 
+     let tempInterval;
+     
+     onOffButton.addEventListener('click', function() {
+        if(onOffButton.textContent ==="Display Off"){
+            onOffButton.textContent = 'Display On';
+            clearInterval(tempInterval);
+            tempDisplay.textContent="Temperature: "
+            images.forEach(function(image){
+                image.style.display ='none';
+            });
+        }else{
+            onOffButton.textContent= "Display Off";
+            tempInterval= setInterval(updateTemp, 1000);
+            images.forEach(function(image){
+                image.style.display='block';
+            });
+        }
+
+     });
+    });
+    function switchTabs() {
+    var image = document.querySelector('.image img');
+    if (image.src === 'https://c8.alamy.com/comp/2A4A82Y/packed-fridge-2A4A82Y.jpg') {
+        image.src = 'https://i.pcmag.com/imagery/reviews/02P17YReLaRiljWtcJVL0hs-11.fit_scale.size_1028x578.v1569478405.jpg';
+    } else {
+        image.src = 'https://c8.alamy.com/comp/2A4A82Y/packed-fridge-2A4A82Y.jpg';
+    }
+}
+   
+
+ </script>
+ 
+</head>
+
+<body onload="doStartClock();">
+    
+<div class="display">
+    <div class="frame">
+        <div class="screen">
+            <div id="clock" class="clock">
+                <p id="timePar" style="font-size:10em;font-family:'Courier New', Courier, monospace; text-align: center;">00:00:00</p>
+            </div>
+            <div id="temp" class="temp">
+            </div>
+            <div id="image" class="image"><img src="https://c8.alamy.com/comp/2A4A82Y/packed-fridge-2A4A82Y.jpg" alt="Inside Fridge" width="200" height="200"></div>
+            <button id="onOffButton" class="on-off-button">Display Off</button>
+            <button  onClick="window.open('https://www.supercook.com/#/desktop');" id="searchRecipies" class="searchRecipies"><span class="icon">What can I make?</span></button>
+            <button onClick="switchTabs()" id="switch" class="switch">Switch To Browser</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer>
+        <hr>
+        <small> &copy; T. Kaminer, February 14th, 2024 </small>
+    </footer>
+
+
+</body>
+</html>
