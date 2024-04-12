@@ -26,15 +26,17 @@
         height: auto;
         display: block;
         margin: 0 auto;
+        float: right;
     }
 
     div {
         font-size: 1.5em;
         text-decoration: underline goldenrod;
         font-weight: lighter;
+        text-align: left;
     }
 
-    a:visited {
+    a:hover {
         color: green;
     }
 
@@ -53,7 +55,7 @@
     </div>
     <script>
         function githubFilelist() {
-            var htmlString = "";
+            var htmlString = "<ul>";
 
             (async () => {
                 const response = await fetch("https://api.github.com/repos/tyler-i-kaminer/SD330/contents/");
@@ -63,9 +65,10 @@
                     fname = file.name;
                     fpath = "https://tyler-i-kaminer.github.io/SD330/" + fname;
 
-                    htmlString += "<p><a href='" + fpath + "'>" + fname + "</a></p>";
+                    htmlString += "<li><a href='" + fpath + "'>" + fname + "</a></li>";
                 }
 
+                htmlString += "</ul>";
                 document.getElementById('files').innerHTML = htmlString;
             })();
         }
