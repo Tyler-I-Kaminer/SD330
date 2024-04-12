@@ -13,8 +13,7 @@
         background-image: url('filelistback.jpg');
         background-size: cover;
         background-position: center;
-        color: black;
-        text-decoration: underline white;
+        color: white;
         font-family: 'Spartan', sans-serif;
         text-align: center;
         font-size: 3em;
@@ -27,6 +26,12 @@
         height: auto;
         display: block;
         margin: 0 auto;
+    }
+
+    div {
+        font-size: 1.5em;
+        text-decoration: underline goldenrod;
+        font-weight: lighter;
     }
 </Style>
 
@@ -50,8 +55,7 @@
                     fname = file.name;
                     fpath = "https://tyler-i-kaminer.github.io/SD330/" + fname;
 
-                    htmlString += "<p>" + fname + "</p>";
-                    htmlString += "<p>" + fpath + "</p>";
+                    htmlString += "<p><a href='" + fpath + "'>" + fname + "</a></p>";
                 }
 
                 document.getElementById('files').innerHTML = htmlString;
