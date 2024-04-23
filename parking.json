@@ -1,0 +1,172 @@
+{
+    "parking_lots": [
+        {
+            "name": "Foy",
+            "map_filename": "mapFoy.jpg",
+            "total_spaces": 40,
+            "comments": "To the right of Hancock",
+            "lotUsage": "High",
+            "spaces": [
+                {
+                    "name": "Spot1",
+                    "type": "Student",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot2",
+                    "type": "Student",
+                    "status": "Filled",
+                    "filled_datetime": "4/23/24 at 1:00 p.m.",
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot3",
+                    "type": "Student",
+                    "status": "Reserved",
+                    "filled_datetime": null,
+                    "reserved_datetime": "4/23/24 at 5:00 p.m."
+                },
+                {
+                    "name": "Spot4",
+                    "type": "Faculty/Staff",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot5",
+                    "type": "Faculty/Staff",
+                    "status": "Filled",
+                    "filled_datetime": "4/23/24 at 1:00 p.m.",
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot6",
+                    "type": "Faculty/Staff",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot7",
+                    "type": "Faculty/Staff",
+                    "status": "Reserved",
+                    "filled_datetime": null,
+                    "reserved_datetime": "4/25/24 at 4:00 p.m."
+                },
+                {
+                    "name": "Spot8",
+                    "type": "Handicap",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot9",
+                    "type": "Handicap",
+                    "status": "Filled",
+                    "filled_datetime": "4/23/24 at 1:00 p.m.",
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot10",
+                    "type": "Handicap",
+                    "status": "Reserved",
+                    "filled_datetime": null,
+                    "reserved_datetime": "4/26/24 at 2:00 p.m."
+                },
+                {
+                    "name": "Spot11",
+                    "type": "Electric",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                },
+                {
+                    "name": "Spot12",
+                    "type": "Electric",
+                    "status": "Filled",
+                    "filled_datetime": "4/23/24 at 1:00 p.m.",
+                    "reserved_datetime": null
+                }
+            ]
+        },
+        {
+            "name": "Upper Fulton",
+            "map_filename": "mapUpperFulton.jpg",
+            "total_spaces": 100,
+            "comments": "Besides the MarketPlace, furthest lot from main campus",
+            "lotUsage": "Low",
+            "spaces": [
+                {
+                    "type": "Student",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                }
+            ]
+        },
+        {
+            "name": "Donnelly",
+            "map_filename": "mapDonnelly.jpg",
+            "total_spaces": 50,
+            "comments": "Adjacent to Tenney Field",
+            "lotUsage": "High",
+            "spaces": [
+                {
+                    "type": "Student",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                }
+            ]
+        },
+        {
+            "name": "Steel Plant",
+            "map_filename": "mapSteelPlant.jpg",
+            "total_spaces": 80,
+            "comments": "Directly across the road from main campus",
+            "lotUsage": "High",
+            "spaces": [
+                {
+                    "type": "Student",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                }
+            ]
+        },
+        {
+            "name": "Midrise",
+            "map_filename": "mapMidrise.jpg",
+            "total_spaces": 30,
+            "comments": "Next to student center",
+            "lotUsage": "Medium",
+            "spaces": [
+                {
+                    "type": "Student",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                }
+            ]
+        },
+        {
+            "name": "Riverview",
+            "map_filename": "mapRiverview.jpg",
+            "total_spaces": 70,
+            "comments": "Behind Hancock",
+            "lotUsage": "High",
+            "spaces": [
+                {
+                    "type": "Student",
+                    "status": "Available",
+                    "filled_datetime": null,
+                    "reserved_datetime": null
+                }
+            ]
+        }
+    ]
+}
