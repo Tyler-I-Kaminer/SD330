@@ -2,7 +2,7 @@
     "parking_lots": [
         {
             "name": "Foy",
-            "map_filename": "mapFoy.jpg",
+            "map_filename": "mapFoy.png",
             "total_spaces": 40,
             "comments": "To the right of Hancock",
             "lotUsage": "High",
@@ -95,7 +95,7 @@
         },
         {
             "name": "Upper Fulton",
-            "map_filename": "mapUpperFulton.jpg",
+            "map_filename": "mapUpperFulton.png",
             "total_spaces": 100,
             "comments": "Besides the MarketPlace, furthest lot from main campus",
             "lotUsage": "Low",
@@ -110,7 +110,7 @@
         },
         {
             "name": "Donnelly",
-            "map_filename": "mapDonnelly.jpg",
+            "map_filename": "mapDonnelly.png",
             "total_spaces": 50,
             "comments": "Adjacent to Tenney Field",
             "lotUsage": "High",
@@ -140,7 +140,7 @@
         },
         {
             "name": "Midrise",
-            "map_filename": "mapMidrise.jpg",
+            "map_filename": "mapMidrise.png",
             "total_spaces": 30,
             "comments": "Next to student center",
             "lotUsage": "Medium",
@@ -155,7 +155,7 @@
         },
         {
             "name": "Riverview",
-            "map_filename": "mapRiverview.jpg",
+            "map_filename": "mapRiverview.png",
             "total_spaces": 70,
             "comments": "Behind Hancock",
             "lotUsage": "High",

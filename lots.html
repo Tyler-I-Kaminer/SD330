@@ -33,27 +33,25 @@
     </footer>
 
     <script type="module">
-        
-            let htmlString = "<p> Fetching file: tyler-i-kaminer.github.io/SD330/parking.json";
-            htmlString += "<br> Loading into: 'data' multi-dimensional object (array)";
+        let htmlString = "<p> Fetching file: tyler-i-kaminer.github.io/SD330/parking.json";
+htmlString += "<br> Loading into: 'data' multi-dimensional object (array)";
 
-            const response = await fetch("https://tyler-i-kaminer.github.io/SD330//parking.json");
-            const data = await response.json();
+const response = await fetch("https://tyler-i-kaminer.github.io/SD330//parking.json");
+const data = await response.json();
 
-                htmlString += "<p> The parking lots on campus are: " + data['parking_lots'];
-                
-                let keys = Object.keys(data['parking_lots']);
-                for(let i in keys){
-                
-                let thisKey = keys[i];
-                htmlString += "<hr><p> Lot: " + thisKey;
-                htmlString += "<p>Parking Lot "+ data['parking_lots']['name'] + ": Map = " + data['parking_lots']['map_filename'] + " and totalSpaces = " + data['parking_lots']['total_spaces'];
+for(let i = 0; i < data['parking_lots'].length; i++){
+    let lot = data['parking_lots'][i];
+    htmlString += "<hr><p> Lot: " + lot['name'] + " ";
+    htmlString += "<p>Map = " + lot['map_filename'] + " ";
+    htmlString += "<ul><li>Total spaces = " + lot['total_spaces'] + " </li>";
+    htmlString += "<li>Comments: " + lot['comments'] + " </li>";
+    htmlString += "<li>Lot usage: " + lot['lotUsage'] + " </li></ul>";
+    htmlString += "<br>";
 
-            }
 
-            
-            document.getElementById('parkingLots').innerHTML += htmlString;
+}
 
+document.getElementById('parkingLots').innerHTML += htmlString;
         </script>
 </body>
 
