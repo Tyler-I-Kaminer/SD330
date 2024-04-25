@@ -41,8 +41,9 @@ const data = await response.json();
 
 for(let i = 0; i < data['parking_lots'].length; i++){
     let lot = data['parking_lots'][i];
+
     htmlString += "<hr><p> Lot: " + lot['name'] + " ";
-    htmlString += "<p>Map = " + lot['map_filename'] + " ";
+    htmlString += "<p>Map: <br> <img src=" + lot['map_filename'] + " alt= " + lot['map_filename'];
     htmlString += "<ul><li>Total spaces = " + lot['total_spaces'] + " </li>";
     htmlString += "<li>Comments: " + lot['comments'] + " </li>";
     htmlString += "<li>Lot usage: " + lot['lotUsage'] + " </li></ul>";

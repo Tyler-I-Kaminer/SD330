@@ -17,7 +17,8 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
-    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 nav ul li {
@@ -50,7 +51,7 @@ footer {
     width: 100%;
     background-color: #bf9f4c; 
     color: #314837; 
-    padding: 10px;
+    padding: 2px;
     text-align: center;
 }
 
@@ -91,3 +92,17 @@ a.error404:hover {
 }
 
 /*Parking lots page CSS */
+
+img{
+    max-width: 30%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "\1F697";
+    padding-right: 8px; 
+}
