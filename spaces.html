@@ -4,35 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Lots</title>
+    <title>Parking</title>
     <link rel="stylesheet" href="park.css">
 </head>
 
 <body>
     <header>
-        <h1 id="lotTitle">Parking Lots</h1>
         <nav>
             <ul>
-                <li><a href="parking.html"><br>Home</a></li>
                 <li><a href="parking404.html"><br>Login</a></li>
                 <li><a href="parking404.html"><br>Help</a></li>
                 <li><a href="parking404.html"><br>Contact</a></li>
+                <li><a href="lots.html"><br>Parking Lots</a></li>
                 <li><a href="parking404.html"><br>Tickets</a></li>
                 <li><a href="parking404.html"><br>Account</a></li>
             </ul>
         </nav>
     </header>
     
-
     <main>
-        <p id="parkingLots">
-       
-        
+        <h1>Here and the Spaces in the lot you clicked on</h1>
+        <p id="parkingLots"></p>
     </main>
 
     <footer>
-        <p>© T. Kaminer</p>
+        <p>&copy; T. Kaminer</p>
     </footer>
+
 
     <script type="module">
         let htmlString = "<p> Fetching file: tyler-i-kaminer.github.io/SD330/parking.json";
@@ -54,8 +52,6 @@
             }
 
             document.getElementById('parkingLots').innerHTML += htmlString;
-     
-    </script>
-</body>
-
+     </script>
+    </body>
 </html>
