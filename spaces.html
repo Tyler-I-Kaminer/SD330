@@ -23,8 +23,7 @@
     </header>
     
     <main>
-        <h1>Here and the Spaces in the lot you clicked on</h1>
-        <p id="parkingLots"></p>
+        <div id="selectedLot"></div>
     </main>
 
     <footer>
@@ -33,25 +32,50 @@
 
 
     <script type="module">
-        let htmlString = "<p> Fetching file: tyler-i-kaminer.github.io/SD330/parking.json";
-        htmlString += "<br> Loading into: 'data' multi-dimensional object (array)";
-
-        
+        async function fetchData() {
             const response = await fetch("https://tyler-i-kaminer.github.io/SD330//parking.json");
-            const data = await response.json();
+            return await response.json();
+        }
 
-            for(let i = 0; i < data['parking_lots'].length; i++){
-                let lot = data['parking_lots'][i];
+        var urlParms = new URLSearchParams(window.location.search);
+        var loc = urlParms.get('lot');
 
-                htmlString += "<hr><p>Lot: " + "<a href='spaces.html'>" + lot['name'] + "</a> ";
-                htmlString += "<p>Map: <br> <img src=" + lot['map_filename'] + " alt= " + lot['map_filename'];
-                htmlString += "<ul><li>Total spaces = " + lot['total_spaces'] + " </li>";
-                htmlString += "<li>Comments: " + lot['comments'] + " </li>";
-                htmlString += "<li>Lot usage: " + lot['lotUsage'] + " </li></ul>";
-                htmlString += "<br>";
-            }
+        if (loc) {
+            fetchData()
+                .then(data => {
+                    const lot = data['parking_lots'].find(lot => lot['name'] === loc);
 
-            document.getElementById('parkingLots').innerHTML += htmlString;
-     </script>
-    </body>
+                    if (lot) {
+                        let spotsHtml = "<h1>Here are the spaces for the " + loc + " parking lot</h1>";
+                        for (let spot of lot['spaces']) {
+                            spotsHtml += "<div  class='spot'>"
+                            spotsHtml += "<p>Spot Number: " + spot['name'] + "<br>";
+                            spotsHtml += "<div>"
+                            spotsHtml += "<p>This is a " + spot['type'] + " car spot ";
+                            if (spot['status'] === 'Reserved') {
+                                spotsHtml += "and is reserved for " + spot['reserved_datetime'] + "<br>";
+                            } else if (spot['status'] === 'Filled') {
+                                spotsHtml += " and was filled at " + spot['filled_datetime'] + "<br>";
+                            } else {
+                                spotsHtml += "and is Available" + "<br>";
+                            }
+                            spotsHtml += "</div>"; 
+                            spotsHtml += "</div>"; 
+                            spotsHtml += "<br>"
+                        }
+                        document.getElementById('selectedLot').innerHTML = spotsHtml;
+                    } else {
+                        document.getElementById('selectedLot').innerHTML = "<p>Lot not found.</p>";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    document.getElementById('selectedLot').innerHTML = "<p>Error fetching data. Please try again later.</p>";
+                });
+        } else {
+            document.getElementById('selectedLot').innerHTML = "<p>No lot selected.</p>";
+        }
+    </script>
+</body>
+
 </html>

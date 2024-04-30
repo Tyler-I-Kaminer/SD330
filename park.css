@@ -119,3 +119,38 @@ ul li::before {
     padding-right: 8px; 
 }
 
+/* Parking Lots Page Styles */
+#selectedLot {
+    margin-top: 20px;
+    display: block; 
+    grid-template-columns: 200px 200px; 
+    gap: 20px; 
+}
+
+.spot {
+    border: 1px solid #6f634d; 
+    padding: 10px; 
+}
+
+.spot p {
+    margin: 0; 
+}
+
+.spot > p {
+    font-weight: bold;
+}
+
+.spot > div {
+    margin-top: 10px; 
+}
+#selectedLot h1 {
+    font-size: 24px; 
+    color: #314837; 
+    margin-bottom: 20px; 
+}
+
+#selectedLot p {
+    font-size: 16px; 
+    color: black; 
+    margin-bottom: 10px; 
+}

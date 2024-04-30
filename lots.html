@@ -45,7 +45,7 @@
             for(let i = 0; i < data['parking_lots'].length; i++){
                 let lot = data['parking_lots'][i];
 
-                htmlString += "<hr><p>Lot: " + "<a href='spaces.html'>" + lot['name'] + "</a> ";
+                htmlString += "<hr><p>Lot: " + "<a href='spaces.html?lot=" + encodeURIComponent(lot['name']) + "'>" + lot['name'] + "</a> ";
                 htmlString += "<p>Map: <br> <img src=" + lot['map_filename'] + " alt= " + lot['map_filename'];
                 htmlString += "<ul><li>Total spaces = " + lot['total_spaces'] + " </li>";
                 htmlString += "<li>Comments: " + lot['comments'] + " </li>";
