@@ -23,6 +23,7 @@
     </header>
     
     <main>
+        
         <div id="selectedLot"></div>
     </main>
 
@@ -50,14 +51,29 @@
                         for (let spot of lot['spaces']) {
                             spotsHtml += "<div  class='spot'>"
                             spotsHtml += "<p>Spot Number: " + spot['name'] + "<br>";
-                            spotsHtml += "<div>"
+                                if(spot['type']=="Handicap"){
+                                    spotsHtml += "<img src='handicap.jpg' alt='Handicap Spot'>";
+                                }
+                                else if(spot['type']=="Electric"){
+                                    spotsHtml += "<img src='Electric.jpg' alt='Electric Car Spot'>";
+                                }
+                                else if(spot['type']=="Faculty/Staff"){
+                                    spotsHtml += "<img src='FacStaff.jpg' alt='Faculty/Staff Car Spot'>";
+                                }
+                                else if(spot['type']=="Student"){
+                                    spotsHtml += "<img src='Student.jpg' alt='Student Car Spot'>";
+                                }
+                                else{
+                                    spotsHtml += "<img src='nopark.jpg' alt='No Parking'>";
+                                }
+                            spotsHtml += "<div>";
                             spotsHtml += "<p>This is a " + spot['type'] + " car spot ";
                             if (spot['status'] === 'Reserved') {
                                 spotsHtml += "and is reserved for " + spot['reserved_datetime'] + "<br>";
                             } else if (spot['status'] === 'Filled') {
                                 spotsHtml += " and was filled at " + spot['filled_datetime'] + "<br>";
                             } else {
-                                spotsHtml += "and is Available" + "<br>";
+                                spotsHtml += "and it is Available" + "<br>";
                             }
                             spotsHtml += "</div>"; 
                             spotsHtml += "</div>"; 

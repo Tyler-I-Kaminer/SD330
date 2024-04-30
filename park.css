@@ -122,14 +122,22 @@ ul li::before {
 /* Parking Lots Page Styles */
 #selectedLot {
     margin-top: 20px;
-    display: block; 
-    grid-template-columns: 200px 200px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-template-rows: repeat(auto-fill, auto); 
     gap: 20px; 
 }
 
 .spot {
     border: 1px solid #6f634d; 
     padding: 10px; 
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+
 }
 
 .spot p {
@@ -143,10 +151,18 @@ ul li::before {
 .spot > div {
     margin-top: 10px; 
 }
+
+.spot img{
+    max-width: 70%;  
+  padding: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 #selectedLot h1 {
     font-size: 24px; 
     color: #314837; 
     margin-bottom: 20px; 
+    justify-content: left;
+    
 }
 
 #selectedLot p {
