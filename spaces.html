@@ -12,6 +12,7 @@
     <header>
         <nav>
             <ul>
+                <li><a href="parking.html"><br>Home</a></li>
                 <li><a href="parking404.html"><br>Login</a></li>
                 <li><a href="parking404.html"><br>Help</a></li>
                 <li><a href="parking404.html"><br>Contact</a></li>
@@ -47,24 +48,24 @@
                     const lot = data['parking_lots'].find(lot => lot['name'] === loc);
 
                     if (lot) {
-                        let spotsHtml = "<h1>Here are the spaces for the " + loc + " parking lot</h1>";
+                        let spotsHtml = "<h1><strong>Here are the spaces for the " + loc + " parking lot</strong></h1>";
                         for (let spot of lot['spaces']) {
                             spotsHtml += "<div  class='spot'>"
                             spotsHtml += "<p>Spot Number: " + spot['name'] + "<br>";
                                 if(spot['type']=="Handicap"){
-                                    spotsHtml += "<img src='handicap.jpg' alt='Handicap Spot'>";
+                                    spotsHtml += "<img src='handicap.png' alt='Handicap Spot'>";
                                 }
                                 else if(spot['type']=="Electric"){
-                                    spotsHtml += "<img src='Electric.jpg' alt='Electric Car Spot'>";
+                                    spotsHtml += "<img src='Electric.png' alt='Electric Car Spot'>";
                                 }
                                 else if(spot['type']=="Faculty/Staff"){
-                                    spotsHtml += "<img src='FacStaff.jpg' alt='Faculty/Staff Car Spot'>";
+                                    spotsHtml += "<img src='FacStaff.png' alt='Faculty/Staff Car Spot'>";
                                 }
                                 else if(spot['type']=="Student"){
-                                    spotsHtml += "<img src='Student.jpg' alt='Student Car Spot'>";
+                                    spotsHtml += "<img src='Student.png' alt='Student Car Spot'>";
                                 }
                                 else{
-                                    spotsHtml += "<img src='nopark.jpg' alt='No Parking'>";
+                                    spotsHtml += "<img src='nopark.png' alt='No Parking'>";
                                 }
                             spotsHtml += "<div>";
                             spotsHtml += "<p>This is a " + spot['type'] + " car spot ";
