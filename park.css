@@ -1,5 +1,21 @@
 /* General Styles */
 
+#mpage{
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+#mpage > img {
+    max-width: 1000px;
+    text-align: center;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
