@@ -102,7 +102,7 @@
             "spaces": [
                 {
                     "name": "1",
-                    "type": "Student",
+                    "type": "Electric",
                     "status": "Available",
                     "filled_datetime": null,
                     "reserved_datetime": null
@@ -118,7 +118,7 @@
             "spaces": [
                 {
                     "name": "1",
-                    "type": "Student",
+                    "type": "Faculty/Staff",
                     "status": "Available",
                     "filled_datetime": null,
                     "reserved_datetime": null
@@ -134,7 +134,7 @@
             "spaces": [
                 {
                     "name": "1",
-                    "type": "Student",
+                    "type": "Handicap",
                     "status": "Available",
                     "filled_datetime": null,
                     "reserved_datetime": null
@@ -154,6 +154,13 @@
                     "status": "Available",
                     "filled_datetime": null,
                     "reserved_datetime": null
+                },
+                {
+                    "name": "2",
+                    "type": "Visitor",
+                    "status": "Filled",
+                    "filled_datetime": "N/A",
+                    "reserved_datetime": "N/A"
                 }
             ]
         },

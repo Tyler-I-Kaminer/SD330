@@ -1,5 +1,33 @@
 /* General Styles */
-
+.breadcrumb{
+    padding: 20px 16px;
+    list-style: none;
+    background-color: none;
+    float: left;
+    
+    }
+    
+  .breadcrumb-item{
+    display: inline;
+    font-size: 18px;
+    }
+  
+  .breadcrumb li+li:before{
+    padding: 8px;
+    color: black;
+    content: ">>";
+  }
+  
+  .breadcrumb-item a{
+    color: #2e4053;
+    text-decoration: none ;
+  }
+  
+  .breadcrumb-item a:hover{
+    color: red;
+    text-decoration: underline;
+  }
+  
 #mpage{
     text-align: center;
     max-width: 800px;

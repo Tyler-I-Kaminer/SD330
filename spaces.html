@@ -20,11 +20,17 @@
                 <li><a href="parking404.html"><br>Tickets</a></li>
                 <li><a href="parking404.html"><br>Account</a></li>
             </ul>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"> <a href="parking.html"> Home </a></li>
+                <li class="breadcrumb-item"> <a href="lots.html"> Parking Lots </a></li>
+                <li class="breadcrumb-item"> <a href="#"> Parking Spaces </a></li>
+            </ol>
+            <br>
         </nav>
     </header>
-    
+    <br>
     <main>
-        
+
         <div id="selectedLot"></div>
     </main>
 
@@ -52,21 +58,21 @@
                         for (let spot of lot['spaces']) {
                             spotsHtml += "<div  class='spot'>"
                             spotsHtml += "<p>Spot Number: " + spot['name'] + "<br>";
-                                if(spot['type']=="Handicap"){
-                                    spotsHtml += "<img src='handicap.png' alt='Handicap Spot'>";
-                                }
-                                else if(spot['type']=="Electric"){
-                                    spotsHtml += "<img src='Electric.png' alt='Electric Car Spot'>";
-                                }
-                                else if(spot['type']=="Faculty/Staff"){
-                                    spotsHtml += "<img src='FacStaff.png' alt='Faculty/Staff Car Spot'>";
-                                }
-                                else if(spot['type']=="Student"){
-                                    spotsHtml += "<img src='Student.png' alt='Student Car Spot'>";
-                                }
-                                else{
-                                    spotsHtml += "<img src='nopark.png' alt='No Parking'>";
-                                }
+                            if (spot['type'] == "Handicap") {
+                                spotsHtml += "<img src='handicap.png' alt='Handicap Spot'>";
+                            }
+                            else if (spot['type'] == "Electric") {
+                                spotsHtml += "<img src='Electric.png' alt='Electric Car Spot'>";
+                            }
+                            else if (spot['type'] == "Faculty/Staff") {
+                                spotsHtml += "<img src='FacStaff.png' alt='Faculty/Staff Car Spot'>";
+                            }
+                            else if (spot['type'] == "Student") {
+                                spotsHtml += "<img src='Student.png' alt='Student Car Spot'>";
+                            }
+                            else {
+                                spotsHtml += "<img src='nopark.png' alt='No Parking'>";
+                            }
                             spotsHtml += "<div>";
                             spotsHtml += "<p>This is a " + spot['type'] + " car spot ";
                             if (spot['status'] === 'Reserved') {
@@ -76,8 +82,8 @@
                             } else {
                                 spotsHtml += "and it is Available" + "<br>";
                             }
-                            spotsHtml += "</div>"; 
-                            spotsHtml += "</div>"; 
+                            spotsHtml += "</div>";
+                            spotsHtml += "</div>";
                             spotsHtml += "<br>"
                         }
                         document.getElementById('selectedLot').innerHTML = spotsHtml;
